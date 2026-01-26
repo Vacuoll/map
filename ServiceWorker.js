@@ -1,4 +1,4 @@
-const CACHE_NAME = "VIZHU-visuals-projects-map-0.1.04";
+const CACHE_NAME = "VIZHU-visuals-projects-map-0.1.05";
 // Файлы для предварительного кэширования
 const PRECACHE_URLS = [
   './',

@@ -1,4 +1,4 @@
-const CACHE_NAME = "VIZHU-visuals-projects-map-0.1.02";
+const CACHE_NAME = "VIZHU-visuals-projects-map-0.1.03";
 // Устанавливаем Service Worker
 self.addEventListener('install', (event) => {
     self.skipWaiting();

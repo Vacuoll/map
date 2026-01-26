@@ -1,10 +1,27 @@
-const CACHE_NAME = "VIZHU-visuals-projects-map-0.1.03";
+const CACHE_NAME = "VIZHU-visuals-projects-map-0.1.04";
+// Файлы для предварительного кэширования
+const PRECACHE_URLS = [
+  './',
+  './index.html',
+  './TemplateData/favicon.ico',
+  './Build/Build.loader.js',
+  './Build/Build.data.unityweb',
+  './Build/Build.framework.js.unityweb',
+  './Build/Build.wasm.unityweb',
+  './manifest.webmanifest'
+];
+
 // Устанавливаем Service Worker
 self.addEventListener('install', (event) => {
     self.skipWaiting();
 
   event.waitUntil(
-    caches.open(CACHE_NAME))
+    caches.open(CACHE_NAME)
+      .then((cache) => {
+        // Кэшируем основные ресурсы
+        return cache.addAll(PRECACHE_URLS);
+      })
+  );
 });
 
 // Активируем Service Worker

@@ -32,13 +32,13 @@
                 navigator.serviceWorker.register(workerUrl)
                     .then(registration => {
                         console.log('Service Worker зарегистрирован:', registration);
-
+                        
                         // Проверяем, есть ли ожидающий worker
                         if (registration.waiting) {
                             // Автоматически активируем новый worker
                             registration.waiting.postMessage({ type: 'SKIP_WAITING' });
                         }
-
+                        
                         // Слушаем обновления
                         registration.addEventListener('updatefound', () => {
                             const newWorker = registration.installing;

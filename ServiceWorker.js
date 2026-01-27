@@ -30,7 +30,7 @@ self.addEventListener('install', async (event) => {
   self.skipWaiting();
 
   event.waitUntil(
-    caches.open(CACHE_NAME)
+    caches.open(CURRENT_CACHE)
       .then((cache) => {
         return cache.addAll(PRECACHE_URLS);
       })
